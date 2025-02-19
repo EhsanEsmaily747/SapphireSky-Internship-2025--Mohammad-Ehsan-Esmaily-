@@ -106,7 +106,7 @@ console.log(countDigits(123)); //123 has 3 digits
 function countDigits2(num) {
   let count = 0;
   let number = num;
-
+  
   while (number % 10 > 0) {
     number = Number.parseInt(number / 10);
     count++;
