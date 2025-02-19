@@ -12,7 +12,6 @@ function isPrime(num) {
             }
         }
         return prime ? `${num} is a primitive number.` : `${num} is not a primitive number.`
-        
     }else{
         return 'Input is not a number.'
     }
