@@ -4,8 +4,8 @@
 
 function isPrime(number) {
   let count = 0;
-  for (let i = 0; i < 12; i++) {
-    number % 2 ? count++ : "";
+  for (let i = 1; i < number; i++) {
+    number % i ? count++ : "";
   }
   return count > 2;
 }
