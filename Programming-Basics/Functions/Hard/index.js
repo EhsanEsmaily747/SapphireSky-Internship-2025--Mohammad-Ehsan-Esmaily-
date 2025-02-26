@@ -6,34 +6,37 @@ function generatePascalTriangle(rows) {
   const triangle = [];
 
   for (let i = 0; i < rows; i++) {
-    const row = [1]; // First element is always 1
+    const row = [1];
     for (let j = 1; j < i; j++) {
-      row.push(triangle[i - 1][j - 1] + triangle[i - 1][j]); // Sum of above two numbers
-    }
-    if (i > 0) row.push(1); // Last element is always 1
+      row.push(triangle[i - 1][j - 1] + triangle[i - 1][j]);    }
+    if (i > 0) row.push(1);
     triangle.push(row);
   }
-
   return triangle;
 }
+
 
 function printPascalTriangle(rows) {
   const triangle = generatePascalTriangle(rows);
 
   for (let i = 0; i < triangle.length; i++) {
-    // Add spaces for alignment
-    const spaces = " ".repeat(rows - i);
-    const rowString = triangle[i].join(" ");
+    
+    const spaces = " ".repeat((triangle.length - i)+5);
+    const rowString = triangle[i].join("  ");
     console.log(spaces + rowString);
   }
 }
 
-// Example Usage
-printPascalTriangle(8);
+printPascalTriangle(12);
 
-//  *
-// ***
-//*****
+//        1
+//       1 1
+//      1 2 1
+//     1 3 3 1
+//    1 4 6 4 1
+//   1 5 10 10 5 1
+//  1 6 15 20 15 6 1
+
 
 // Question 2
 // Binary Search Algorithm
