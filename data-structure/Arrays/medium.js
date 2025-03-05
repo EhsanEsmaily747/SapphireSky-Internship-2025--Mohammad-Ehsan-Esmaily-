@@ -89,23 +89,35 @@ function reverseArray(array) {
   
   function findIntersection(array1, array2) {
       const intersection = []
-      let i = 0
-      let j = 0
-      while (i < array1.length && j < array2.length) {
+      // let i = 0
+      // let j = 0
+      // while (i < array1.length && j < array2.length) {
+      //     if (array1[i] === array2[j]) {
+      //         intersection.push(array1[i]);
+      //         i++;
+      //         j++;
+      //     } else if (array1[i] < array2[j]) {
+      //         i++;
+      //     } else {
+      //         j++;
+      //     }
+      // }
+
+      for (let i = 0; i < array1.length; i++) {
+        for (let j = 0; j < array2.length; j++) {
           if (array1[i] === array2[j]) {
-              intersection.push(array1[i]);
-              i++;
-              j++;
-          } else if (array1[i] < array2[j]) {
-              i++;
-          } else {
-              j++;
+            intersection.push(array1[i])
           }
+        }
+        
       }
+
       return intersection
-  
   }
-  // console.log(findIntersection([4,5,6,7,8,9,10],[1,2,3,4,5,6,7]));   //[ 4, 5, 6, 7 ]
+  console.log(findIntersection([4,5,6,7,8,9,10],[1,2,3,4,5,6,7]));   // [ 4, 5, 6, 7 ]
+  console.log(findIntersection([6,3,1,9,0],[1,2,3,6]));  // [ 6, 3, 1 ]
+  
+  
   
   
   
