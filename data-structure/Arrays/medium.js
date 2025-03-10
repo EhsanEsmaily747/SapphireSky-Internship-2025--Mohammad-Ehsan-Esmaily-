@@ -19,7 +19,6 @@ function reverseArray(array) {
     } else if (array2[0] > array1[array1.length - 1]) {
       newArray = [...array1, ...array2];
     } else {
-  
       let i = 0;
       let j = 0;
       while (i < array1.length && j < array2.length) {
@@ -48,7 +47,8 @@ function reverseArray(array) {
   // Implement a function that rotates an array k times to the right.
   
   function rotateArray(iteration, array) {
-    for (let i = 0; i < iteration; i++) {
+    const iterate = iteration>array.length ? iteration % array.length : iteration
+    for (let i = 0; i < iterate; i++) {
       array.unshift(array.splice(array.length - 1, 1)[0]);
     }
     return array;
