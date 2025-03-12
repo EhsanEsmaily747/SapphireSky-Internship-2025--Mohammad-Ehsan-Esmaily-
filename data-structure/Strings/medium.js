@@ -69,7 +69,6 @@ console.log(isAanagram("care", "recca")); //false
 // Implement a function to compress a string using character counts ("aabcccccaaa" → "a2b1c5a3").
 function characterCounter(str) {
   let char = "";
-
   let i = 0;
   let j = 1;
   let count = 1;
