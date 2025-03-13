@@ -1,6 +1,6 @@
 import { LinkedList } from "./linkedList.mjs";
-import { insertNode } from "./question2.mjs";
-import printList from "./question4.mjs";
+import { insertNode } from "./insert_node.mjs";
+import printList from "./print_linkedList.mjs";
 
 const linkedList1 = new LinkedList()
 
@@ -14,9 +14,13 @@ insertNode(4, linkedList1)
 function removeNode(target, list) {
     let  prevNode = list.head
     let currentNode = prevNode
-    while (currentNode.next) {
+    while (currentNode) {
         if(currentNode.value === target){
-                prevNode.next = currentNode.next
+                if (currentNode.value === prevNode.value) {
+                    list.head = currentNode.next
+                }else{
+                    prevNode.next = currentNode.next
+                }
                 return currentNode.value
             }
             prevNode = currentNode

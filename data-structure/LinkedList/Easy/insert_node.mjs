@@ -1,6 +1,6 @@
 
 import { LinkedList,Node } from "./linkedList.mjs";
-import printList from "./question4.mjs";
+import printList from "./print_linkedList.mjs";
 
 // Implement a function to insert a node at the beginning of a linked list.
 

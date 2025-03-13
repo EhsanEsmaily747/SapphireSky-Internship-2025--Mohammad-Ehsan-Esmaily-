@@ -1,5 +1,5 @@
 import { LinkedList } from "./linkedList.mjs";
-import { insertNode } from "./question2.mjs";
+import { insertNode } from "./insert_node.mjs";
 
 const linkedList = new LinkedList();
 
