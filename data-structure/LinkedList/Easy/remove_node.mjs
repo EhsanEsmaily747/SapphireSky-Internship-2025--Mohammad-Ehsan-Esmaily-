@@ -11,7 +11,7 @@ insertNode(4, linkedList1)
 
 // How do you delete a node from a linked list?
 
-function removeNode(target, list) {
+export function removeNode(target, list) {
     let  prevNode = list.head
     let currentNode = prevNode
     while (currentNode) {
