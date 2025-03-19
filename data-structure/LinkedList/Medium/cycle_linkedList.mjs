@@ -20,16 +20,19 @@ nodeE.next = nodeC;
 // How do you detect a cycle in a linked list?
 
 function hasCycle(list) {
-    const nodeMap = new Map()
-    nodeMap.set(list.head, true)
-    
-    let currentNode = list.head
-    while (currentNode) {
-        if(nodeMap.has(currentNode.next)) return true
-        nodeMap.set(currentNode.next, true)
-        currentNode = currentNode.next 
+    let slow = list.head
+    let fast = list.head
+
+    while (fast?.next) {
+        slow = slow.next
+        fast = fast.next.next
+
+        if(slow === fast) break
     }
-    return false
+    if (!fast?.next) {
+        return false 
+    }
+    return true
 }
 
-// console.log(hasCycle(linkedList));  //true
+console.log(hasCycle(linkedList));  //true
