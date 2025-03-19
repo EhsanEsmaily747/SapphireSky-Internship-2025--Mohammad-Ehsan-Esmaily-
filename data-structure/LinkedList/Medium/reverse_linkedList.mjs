@@ -11,15 +11,20 @@ insertNode(4, linkedList);
 insertNode(6, linkedList);
 insertNode(7, linkedList);
 
+//  2   3    5    7
+
 function reverseLinkedlist(list) {
-  const reverse_list = new LinkedList();
-  let currentNode = list.head;
+  let prev = null
+  let currentNode = list?.head
+
   while (currentNode) {
-    insertNode(currentNode.value, reverse_list)  
-    currentNode = currentNode.next
+    const nextNode = currentNode.next
+    currentNode.next = prev
+    prev = currentNode 
+    currentNode = nextNode
   }
-  return reverse_list;
+  list.head = prev
+ return list 
 }
 
 printList(reverseLinkedlist(linkedList));   //1>3>4>6>7>
-printList(linkedList);                      //7>6>4>3>1>
