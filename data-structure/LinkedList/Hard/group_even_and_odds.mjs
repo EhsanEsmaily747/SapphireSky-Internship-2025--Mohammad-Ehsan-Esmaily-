@@ -16,23 +16,7 @@ insertNode(6, linkedList)
 function groupEvenOdds(list) {
     const grouped_linkedList = new LinkedList()
     let currentNode = list.head
-    
-    
-    // method 1
-    // const sortedNumbers = []
-    // while (currentNode) {
-    //     if(currentNode.value % 2 === 0) sortedNumbers.push(currentNode.value)
-    //     else sortedNumbers.unshift(currentNode.value)
-    //     currentNode = currentNode.next
-    // }
-    // for (let i = 0; i < sortedNumbers.length; i++) {
-    //     const newNode = new Node(sortedNumbers[i])
-    //     newNode.next = grouped_linkedList.head
-    //     grouped_linkedList.head = newNode
-    // }
-
-
-    // Method 2
+   
     let evens = 0
     let odds = 0
     let lastNode = new Node('mid')
@@ -58,8 +42,6 @@ function groupEvenOdds(list) {
     }else{
         removeNode('mid', grouped_linkedList)
     }
-    //
-    
     return grouped_linkedList
 }
 
