@@ -26,8 +26,8 @@ export function removeNode(target, list) {
             prevNode = currentNode
             currentNode = currentNode.next
     }
-    return -1
+    return 'does not exist !'
 }
 // console.log(removeNode(3,linkedList1));   //  3
-// console.log(removeNode(5,linkedList1));   //  -1
+// console.log(removeNode(5,linkedList1));   //  does not exist !
 // printList(linkedList1)
