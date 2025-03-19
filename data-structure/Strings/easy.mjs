@@ -1,31 +1,15 @@
 // Write a function to check if a string is a palindrome.
 
-function reverseNumber(num) {
-    const iteration = num.toString().length;
-    let firstNumber = 0;
-    let reverse = 0;
-    let temp = num;
-  
-    for (let i = 1; i <= iteration; i++) {
-      firstNumber = temp % 10;
-      temp = Number.parseInt(temp / 10);
-      reverse += firstNumber * 10 ** (iteration - i);
-    }
-    return reverse;
+
+function  isPalidrome(str) {
+    return reverseString(str) === str ? `${num} is a palindrome number` : `${num} is not a palindrome number` 
 }
-
-function  isPalidrome(num) {
-    return reverseNumber(num) === num ? `${num} is a palindrome number` : `${num} is not a palindrome number` 
-}
-
-
 
 // How do you count the number of vowels in a string?
 
 function countVowels(str) {
     const vowels = ['a','e','i','o','u']
     let counts = 0
-    
     for (let i = 0; i < str.length; i++) {
         vowels.some((v)=>v === str[i].toLowerCase()) ? counts++ : ''
     }
