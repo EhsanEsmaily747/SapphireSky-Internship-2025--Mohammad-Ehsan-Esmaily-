@@ -1,20 +1,47 @@
 // Write a function to check if a given string has balanced parentheses.
 
-const paranthesMap = new Map()
-paranthesMap.set("[",false)
-paranthesMap.set("{",false)
-paranthesMap.set("(",false)
-
 
 function isBalanceParanthes(str) {
-    for (let i = 0; i < str.length; i++) {
-        if(paranthesMap.has(str[i]) && !paranthesMap.get(str[i])) paranthesMap.set(str[i],true)
-        else if(paranthesMap.has(str[i]) && paranthesMap.get(str[i])) paranthesMap.set(str[i],false)
+    const stack = []
+    const opening_brackets = ['[','{','(']
+    const closing_brackets = [']','}',')']
+    const bracketlist = {"[":"]","{":"}","(":")"}
+    for (const char of str) {
+        if(opening_brackets.includes(char)) 
+            stack.push(char)
+        else if(closing_brackets.includes(char)){
+        if(char !== bracketlist[stack.pop()]) 
+            return false
+    } 
     }
-    for (const key of paranthesMap.keys()) {
-        if(key) return false
-    }
-    return true
+    return stack.length === 0
 }
 
-console.log(isBalanceParanthes('[1(2+3*3)*{ehsan}$]'));
+
+function testIsBalanceParanthes() {
+    const testCases = [
+        { input: "[[]{}]", expected: true },
+        { input: "{[()]}", expected: true },
+        { input: "{[}]()", expected: false },
+        { input: "({[})]", expected: false },
+        { input: "(()", expected: false },
+        { input: "[({})]", expected: true },
+        { input: "", expected: true },
+        { input: "[[{{(())}}]]", expected: true },
+        { input: "[({})]}", expected: false },
+        { input: "(({{[[]]}}))", expected: true },
+    ];
+
+    let passed = 0;
+    
+    testCases.forEach(({ input, expected }, index) => {
+        const result = isBalanceParanthes(input);
+        const passedTest = result === expected;
+        console.log(`Test ${index + 1}: "${input}" → ${result} (${passedTest ? "✅ Passed" : "❌ Failed"})`);
+        if (passedTest) passed++;
+    });
+    console.log(`\n${passed} / ${testCases.length} tests passed.`);
+}
+
+// testIsBalanceParanthes();
+
