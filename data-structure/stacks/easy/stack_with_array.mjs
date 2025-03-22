@@ -2,7 +2,7 @@
 
 // Implement a stack using an array in JavaScript.
 
-class Stack{
+export class Stack{
     constructor(){
         this.items = []
     }
@@ -10,7 +10,7 @@ class Stack{
         this.items.push(value)
     }
     pop(){
-        return this.isEmpty() ? "stack is empty" : this.items.pop()
+        return this.isEmpty() ? undefined : this.items.pop()
     }
     size(){
         return this.items.length
@@ -23,15 +23,15 @@ class Stack{
     }
 }
 
-const stack = new Stack()
+// const stack = new Stack()
 
-stack.push(1)
-stack.push(2)
-stack.push(3)
+// stack.push(1)
+// stack.push(2)
+// stack.push(3)
 
-console.log(stack.pop());       //3
-console.log(stack.size());      //2    
-console.log(stack.peek());      //2    
-console.log(stack.isEmpty());   //false 
+// console.log(stack.pop());       //3
+// console.log(stack.size());      //2    
+// console.log(stack.peek());      //2    
+// console.log(stack.isEmpty());   //false 
 
 

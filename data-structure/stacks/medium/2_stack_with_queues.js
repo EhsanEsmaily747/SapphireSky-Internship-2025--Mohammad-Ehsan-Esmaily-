@@ -31,12 +31,12 @@ class Stack{
         this.queue1.enqueue(value)
     }
     pop(){
-        while (queue2.size() > 1) {
-            queue1.enqueue(queue2.dequeue()); 
+        while (this.queue2.size() > 1) {
+            this.queue1.enqueue(this.queue2.dequeue()); 
         }
-        const lastElement = queue2.dequeue();  
-        queue1.enqueue(lastElement);  
-        return this.queue1.dequeue()
+        const lastElement = this.queue1.dequeue();  
+        [this.queue1, this.queue2] = [this.queue2, this.queue1]; 
+        return lastElement
     }
     size(){
         return this.queue1.size() + this.queue2.size()
