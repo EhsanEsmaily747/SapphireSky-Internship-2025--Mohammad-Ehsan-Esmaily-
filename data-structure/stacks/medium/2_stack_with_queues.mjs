@@ -1,6 +1,6 @@
 // How do you implement a stack with two queues?
 
-class Queue{
+export class Queue{
     constructor(){
         this.items = []
     }
@@ -15,6 +15,9 @@ class Queue{
     }
     peek(){
         return this.items[this.size - 1]
+    }
+    front(){
+        return this.items[0]
     }
     isEmpty(){
         return this.size === 0
@@ -49,17 +52,17 @@ class Stack{
     }
 }
 
-const stack = new Stack()
+// const stack = new Stack()
 
-stack.push(1)
-stack.push(2)
-stack.push(3)
+// stack.push(1)
+// stack.push(2)
+// stack.push(3)
 
-console.log(stack);
+// console.log(stack);
 
-console.log(stack.peek());
-console.log(stack.pop());
-console.log(stack.peek());
-console.log(stack.size());
-console.log(stack.isEmpty());
+// console.log(stack.peek());
+// console.log(stack.pop());
+// console.log(stack.peek());
+// console.log(stack.size());
+// console.log(stack.isEmpty());
 
