@@ -8,22 +8,21 @@ export class Queue{
         this.items.push(value)
     }
     dequeue(){
-        return this.items.shift()
+        return !this.isEmpty() ? this.items.shift() : "queue is empty"
     }
     size(){
         return this.items.length
     }
     peek(){
-        return this.items[this.size - 1]
+        return this.items[this.items.length - 1]
     }
     front(){
         return this.items[0]
     }
     isEmpty(){
-        return this.size === 0
+        return this.items.length === 0
     }
 }
-
 class Stack{
     constructor(){
         this.queue1 = new Queue()
